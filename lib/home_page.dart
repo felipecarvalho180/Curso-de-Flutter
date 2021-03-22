@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/app_controller.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,9 +16,41 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home Page'),
+        actions: [ThemeSwitch()],
       ),
-      body: Center(
-        child: GestureDetector(child: Text('Contador: $counter')),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text('Contador $counter'),
+            Padding(padding: EdgeInsets.only(top: 10)),
+            ThemeSwitch(),
+            Padding(padding: EdgeInsets.only(top: 30)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  height: 50,
+                  width: 50,
+                  color: Colors.deepOrangeAccent.shade200,
+                ),
+                Container(
+                  height: 50,
+                  width: 50,
+                  color: Colors.deepOrangeAccent.shade200,
+                ),
+                Container(
+                  height: 50,
+                  width: 50,
+                  color: Colors.deepOrangeAccent.shade200,
+                ),
+              ],
+            )
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -27,6 +60,18 @@ class HomePageState extends State<HomePage> {
         },
         child: Icon(Icons.add),
       ),
+    );
+  }
+}
+
+class ThemeSwitch extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      value: AppController.instance.isDarkTheme,
+      onChanged: (value) {
+        AppController.instance.changeTheme();
+      },
     );
   }
 }
