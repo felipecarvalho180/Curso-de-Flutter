@@ -19,7 +19,7 @@ class AppWidget extends StatelessWidget {
               backgroundColor: Colors.deepOrangeAccent.shade200,
             ),
           ),
-          initialRoute: '/',
+          initialRoute: '/home',
           routes: {
             '/': (context) => LoginPage(),
             '/home': (context) => HomePage()
