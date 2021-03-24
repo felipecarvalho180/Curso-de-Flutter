@@ -18,8 +18,11 @@ class HomePageState extends State<HomePage> {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              currentAccountPicture: Image.network(
-                  'https://scontent.fsdu26-1.fna.fbcdn.net/v/t1.0-9/67090290_3052910311415776_4481350863553560576_o.jpg?_nc_cat=107&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeEUklxr191hNpcgDERuQVMl3dh8ItA4h3rd2Hwi0DiHemX_CFCclA2CLR6MrzkF_3_gwuDZif2MSVK9of7KAxZ_&_nc_ohc=W0v-aSjKgLAAX8pGSD4&_nc_ht=scontent.fsdu26-1.fna&oh=b5be5dd4423368beb442bedc49383768&oe=60807009'),
+              currentAccountPicture: ClipRRect(
+                borderRadius: BorderRadius.circular(40),
+                child: Image.network(
+                    'https://scontent.fsdu26-1.fna.fbcdn.net/v/t1.0-9/67090290_3052910311415776_4481350863553560576_o.jpg?_nc_cat=107&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeEUklxr191hNpcgDERuQVMl3dh8ItA4h3rd2Hwi0DiHemX_CFCclA2CLR6MrzkF_3_gwuDZif2MSVK9of7KAxZ_&_nc_ohc=W0v-aSjKgLAAX8pGSD4&_nc_ht=scontent.fsdu26-1.fna&oh=b5be5dd4423368beb442bedc49383768&oe=60807009'),
+              ),
               accountName: Text('Felipe Carvalho'),
               accountEmail: Text('felipe@teste.com'),
             ),

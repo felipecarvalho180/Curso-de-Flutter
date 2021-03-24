@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hello_world/app_controller.dart';
 import 'package:hello_world/home_page.dart';
 import 'package:hello_world/login_page.dart';
+import 'package:hello_world/welcome_page.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -19,9 +20,10 @@ class AppWidget extends StatelessWidget {
               backgroundColor: Colors.deepOrangeAccent.shade200,
             ),
           ),
-          initialRoute: '/home',
+          initialRoute: '/',
           routes: {
-            '/': (context) => LoginPage(),
+            '/': (context) => WelcomePage(),
+            '/login': (context) => LoginPage(),
             '/home': (context) => HomePage()
           },
         );
